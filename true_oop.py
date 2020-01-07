@@ -3,7 +3,7 @@ obj_state = 0
 
 def obj():
     global obj_state
-    #for UFCS(Unified Function Call Syntax)
+    #for UFCS(Uniform Function Call Syntax)
     def _getattr(self, func):
         module = sys.modules['__main__'] if hasattr(sys.modules['__main__'], func) else sys.modules[self.__module__]
         return lambda *args, **kw: getattr(module, func)(self, *args, **kw)
