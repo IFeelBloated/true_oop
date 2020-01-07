@@ -1,5 +1,4 @@
-import true_oop
-true_oop.symbols = globals()
+from true_oop import obj
 
 def f(self):
     self.g()
@@ -15,9 +14,9 @@ def g2(self):
 def add(self, rhs):
     return self.x + rhs.x
     
-obj1 = true_oop.obj()
-obj2 = true_oop.obj()
-obj3 = true_oop.obj()
+obj1 = obj()
+obj2 = obj()
+obj3 = obj()
 
 obj1.x = 0  #dynamically binds a data member to obj1
 obj1.g = g1 #dynamically binds a member function to obj1
