@@ -1,8 +1,6 @@
 import sys
-obj_state = 0
 
 def obj():
-    global obj_state
     #for UFCS(Uniform Function Call Syntax)
     def _getattr(self, func):
         module = sys.modules['__main__'] if hasattr(sys.modules['__main__'], func) else sys.modules[self.__module__]
@@ -14,6 +12,5 @@ def obj():
         else:
             self.__dict__[attr] = value
     settings = {'__getattr__' : _getattr, '__setattr__' : _setattr}
-    obj_class = type('obj'+str(obj_state), (object,), settings)
-    obj_state += 1
+    obj_class = type('', (), settings)
     return obj_class()
